@@ -9,6 +9,8 @@ import {
    FlatList,
    View,
    ActivityIndicator,
+   TouchableOpacity,
+   TouchableOpacityBase,
  } from 'react-native';
 
  import axios from 'axios';
@@ -42,8 +44,9 @@ import {
    }
 
    return (
+  
     <View style={styles.container}>
-      
+    
       <FlatList
         style={{ marginTop: 35}}
         contentContainerStyle= {{marginHorizontal: 20}}
@@ -62,9 +65,11 @@ import {
 
  function ListItem({ data }){
    return(
-     <View style={styles.listItem}>
-       <Text style={styles.listText}>{data.full_name}</Text>
-     </View>
+     <TouchableOpacity>
+        <View style={styles.listItem}>
+          <Text style={styles.listText}>{data.full_name}</Text>
+        </View>
+     </TouchableOpacity>
    )
  }
 
